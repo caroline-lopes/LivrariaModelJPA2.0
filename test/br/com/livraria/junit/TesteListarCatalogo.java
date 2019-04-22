@@ -42,7 +42,10 @@ public class TesteListarCatalogo {
     List<Catalogo>listacat = em.createQuery("from Catalogo order by id").getResultList();
         
         for(Catalogo c : listacat){
-            System.out.println(" ID: " + c.getId() + " Nome: " + c.getNome() + " Descrição: " + c.getDescricao()+ " Livraria: " + c.getLivraria().getNome());
+            System.out.println(" ID: " + c.getId() + 
+                                " Nome: " + c.getNome() + 
+                                " Descrição: " + c.getDescricao()+ 
+                                " Livraria: " + c.getLivraria().getNome());
         }
         System.out.println("________________________________________________________________________________");
     System.out.println(" ");
