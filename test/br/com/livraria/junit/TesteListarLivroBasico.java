@@ -50,7 +50,7 @@ public class TesteListarLivroBasico {
                                "\n DATA DE PUBLICAÇÃO: " + dataString); 
             System.out.println("\n LISTA DE AUTORES: ");
             for(Autor a : lb.getListaAutor()) {
-                System.out.println(" "+a.getNome() + "\n");
+                System.out.println(" "+a.getNome());
             }
              System.out.println("________________________________________________________________________________");
              System.out.println(" ");

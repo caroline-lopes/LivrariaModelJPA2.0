@@ -6,6 +6,7 @@
 package br.com.livraria.junit;
 
 import br.com.livraria.jpa.EntityManagerUtil;
+import br.com.livraria.modelo.Autor;
 import br.com.livraria.modelo.Catalogo;
 import br.com.livraria.modelo.Formato;
 import br.com.livraria.modelo.Idioma;
@@ -64,8 +65,15 @@ public class TesteListarLivro {
                                "\n VALOR: "+l.getValor()+
                                "\n IDIOMA: "+ l.getIdioma().getNome()+ 
                                "\n FORMATO: "+ l.getFormato().getNome() +
-                               "\n CATÁLOGO: "+ l.getCatalogo().getNome()+
-                               "\n --------------------------------------------------------- \n");
+                               "\n CATÁLOGO: "+ l.getCatalogo().getNome());
+            System.out.println("\n LISTA DE AUTORES: ");
+            for(Autor a : l.getListaAutor()) {
+                System.out.println(" "+a.getNome());
+            }
+             System.out.println("________________________________________________________________________________");
+             System.out.println(" ");
+
+        
         }
      
     

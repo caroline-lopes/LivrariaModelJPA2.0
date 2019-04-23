@@ -46,7 +46,7 @@ public class COMPLETO_TestePersistirLivro {
     
     //LIVRO --------------------------------------------------------------------
     Livro l = new Livro();
-    l.setISBN("11111");
+    l.setISBN("22222");
     l.setTitulo("Um dia na Praia");
     l.setResumo("O que pode ser mais gostoso do que passar um dia na praia? "
             + "Com este kit, que vem com bolsa, livro, baldinho e pá impermeáveis, "
@@ -123,7 +123,7 @@ public class COMPLETO_TestePersistirLivro {
     //LISTAS
     lv.adicionarCatalogo(c);
     au.adicionarLivros(l);
-    l.adicionarAutores(au);
+   // l.adicionarAutores(au);
     
  
     em.getTransaction().begin();

@@ -45,7 +45,7 @@ public class COMPLETO_TesteAtualizarLivro {
      try {   
     
     //LIVRO --------------------------------------------------------------------
-    Livro l = em.find(Livro.class, "11111");
+    Livro l = em.find(Livro.class, "22222");
     l.setTitulo("Harry Potter and the Prisoner of Azkaban");
     l.setResumo("Sirius Black, escaped mass-murderer and follower of"
             + " Lord Voldemort, is on the run - and they say he is"
@@ -74,26 +74,26 @@ public class COMPLETO_TesteAtualizarLivro {
     //##########################################################################
 
     //IDIOMA -------------------------------------------------------------------
-     Idioma idi = em.find(Idioma.class, 1);
+     Idioma idi = em.find(Idioma.class, 2);
     idi.setNome("Inglês");
     idi.setSigla("ING");
     l.setIdioma(idi);
     //l.setIdioma(em.find(Idioma.class, 2)); //CASO QUEIRA OUTRO IDIOMA
     
     //FORMATO ------------------------------------------------------------------
-    Formato f = em.find(Formato.class, 1);
+    Formato f = em.find(Formato.class, 2);
     f.setNome("Digital/E-book");
     l.setFormato(f);
     //l.setFormato(em.find(Formato.class, 2)); //CASO QUEIRA OUTRO FORMATO
     
     //LIVRARIA -----------------------------------------------------------------
-    Livraria lv = em.find(Livraria.class, 1);
+    Livraria lv = em.find(Livraria.class, 2);
     lv.setNome("Saraiva");
     lv.setSite("www.Saraiva.com.br");
     //c.setLivraria(em.find(Formato.class, 2)); // Mas não dá pois precisa da variavel
     
       //CATALOGO -----------------------------------------------------------------
-    Catalogo c = em.find(Catalogo.class, 1);
+    Catalogo c = em.find(Catalogo.class, 2);
     c.setNome("Aventura");
     c.setDescricao(" Sabe aquele livro que você começa e não consegue parar de "
             + "ler? Os livros escolhidos para esse catálogo vão te surpreender "
@@ -106,7 +106,7 @@ public class COMPLETO_TesteAtualizarLivro {
     
      //########################################################################## 
     //AUTOR
-    Autor au = em.find(Autor.class, 1);
+    Autor au = em.find(Autor.class, 2);
     au.setNome("J. K. Rowling");
     au.setBibliografia("J. K. Rowling tornou-se uma escritora de sucesso, suas "
             + "principais obras são: Série Harry Potter, Quadribol Através dos "
@@ -126,14 +126,14 @@ public class COMPLETO_TesteAtualizarLivro {
     
     
     //LISTAS
-    lv.removerCatalogo(em.find(Catalogo.class, 1));
+    lv.removerCatalogo(em.find(Catalogo.class, 2));
     lv.adicionarCatalogo(c);
     
-    au.removerLivros(em.find(Livro.class,"11111"));
+    au.removerLivros(em.find(Livro.class,"22222"));
     au.adicionarLivros(l);
     
-    l.removerAutores(em.find(Autor.class, 1));
-    l.adicionarAutores(au);
+    //l.removerAutores(em.find(Autor.class, 1));
+    //l.adicionarAutores(au);
     
  
     em.getTransaction().begin();

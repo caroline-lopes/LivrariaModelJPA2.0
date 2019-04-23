@@ -51,7 +51,7 @@ public class TesteListarCatalogo {
                                "\n LIVRARIA: " + c.getLivraria().getNome());
        System.out.println("\n LISTA DE LIVROS DESSE CATÁLOGO: ");
         for(Livro liv : c.getListaLivro()) {
-                System.out.println(" "+liv.getTitulo() + "\n");
+                System.out.println(" "+liv.getTitulo());
             }
              System.out.println("________________________________________________________________________________");
              System.out.println(" ");

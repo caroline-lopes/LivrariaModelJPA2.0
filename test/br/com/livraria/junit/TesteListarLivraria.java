@@ -48,7 +48,7 @@ public class TesteListarLivraria {
                                "\n SITE: " + l.getSite());
             System.out.println("\n LISTA DE CATALOGOS: ");
             for(Catalogo c : l.getListaCatalogo()) {
-                System.out.println(" "+c.getNome() + "\n");
+                System.out.println(" "+c.getNome() );
             }
              System.out.println("________________________________________________________________________________");
              System.out.println(" ");

@@ -48,7 +48,7 @@ public class COMPLETO_TesteRemoverLivro {
      
      lv.removerCatalogo(em.find(Catalogo.class, 1));
      au.removerLivros(em.find(Livro.class,"11111"));
-     l.removerAutores(em.find(Autor.class, 1));
+    // l.removerAutores(em.find(Autor.class, 1));
 
 
      
