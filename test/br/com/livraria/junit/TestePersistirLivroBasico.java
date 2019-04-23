@@ -47,12 +47,21 @@ public class TestePersistirLivroBasico {
     lb.setTitulo("O Coelho Azul");
     lb.setResumo("Não, não é o coelho da Mônica!");
     lb.setEditora("Editora Confiança");
-        
+       
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
             Date dtP = sdf.parse("23/09/2014");
             Calendar dtC = Calendar.getInstance();
             dtC.setTime(dtP);
             lb.setDataPublicacao(dtC);
+     
+
+   
+   
+   
+   
+   
+   
+            
             
     //LISTA DE AUTORES DOS LIVROS
     // é um ManyToMany entre LivroBasico e o Autor

@@ -136,5 +136,13 @@ public class Catalogo implements Serializable{
     public void removerLivro(Livro c){
         listaLivro.remove(c);
     }
+
+    public List<Livro> getListaLivro() {
+        return listaLivro;
+    }
+
+    public void setListaLivro(List<Livro> listaLivro) {
+        this.listaLivro = listaLivro;
+    }
   
 }

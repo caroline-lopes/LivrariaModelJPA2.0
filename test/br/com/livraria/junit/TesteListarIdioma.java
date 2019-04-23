@@ -39,7 +39,10 @@ public class TesteListarIdioma {
     List<Idioma> lista = em.createQuery("from Idioma order by id").getResultList();
         
         for(Idioma idi : lista){
-            System.out.println("ID: " + idi.getId() + " Nome: " + idi.getNome() + " Sigla: " + idi.getSigla());
+            System.out.println(" ID: " + idi.getId() + 
+                               "\n NOME: " + idi.getNome() + 
+                               "\n SIGLA: " + idi.getSigla()+
+                               "\n -----------------------\n");
         }
    
     }

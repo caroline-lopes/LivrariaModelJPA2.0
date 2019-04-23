@@ -37,16 +37,25 @@ public class TesteListarLivraria {
     @Test
     public void teste(){
    
-   System.out.println("LISTA DE LIVRARIAS:");
+   System.out.println("\n\nLISTA DE LIVRARIAS: \n\n");
+   System.out.println("________________________________________________________________________________");
+   System.out.println(" ");
     List<Livraria> lista = em.createQuery("from Livraria order by id").getResultList();
         
         for(Livraria l : lista){
-            System.out.println(" ID: " + l.getId() + " Nome: " + l.getNome() + 
-                    " Site: " + l.getSite()+ "      Lista de Catalogos: " + l.getListaCatalogo());
+            System.out.println(" ID: " + l.getId() + 
+                               "\n NOME: " + l.getNome() + 
+                               "\n SITE: " + l.getSite());
+            System.out.println("\n LISTA DE CATALOGOS: ");
+            for(Catalogo c : l.getListaCatalogo()) {
+                System.out.println(" "+c.getNome() + "\n");
+            }
+             System.out.println("________________________________________________________________________________");
+             System.out.println(" ");
+
         }
         
-    System.out.println("________________________________________________________________________________");
-    System.out.println(" ");
+   
 
     }
 }

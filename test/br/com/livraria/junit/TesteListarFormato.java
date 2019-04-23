@@ -39,7 +39,9 @@ public class TesteListarFormato {
     List<Formato> lista = em.createQuery("from Formato order by id").getResultList();
         
         for(Formato f : lista){
-            System.out.println("ID: " + f.getId() + " Nome: " + f.getNome());
+            System.out.println(" ID: " + f.getId() + 
+                               "\n NOME: " + f.getNome()+
+                               "\n -----------------------------\n");
         }
 }
 

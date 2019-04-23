@@ -44,7 +44,7 @@ public class Autor implements Serializable{
     private String bibliografia; 
     
     @ManyToMany
-    @JoinTable(name="autor_LBasico",
+    @JoinTable(name="lBasico_autor",
             joinColumns = 
                 @JoinColumn(name = "autor", referencedColumnName = "id", nullable = false),
              inverseJoinColumns =       
@@ -112,6 +112,14 @@ public class Autor implements Serializable{
     
     public void removerLivros(LivroBasico l){
         listaEscrito.remove(l);
+    }
+
+    public Set<LivroBasico> getListaEscrito() {
+        return listaEscrito;
+    }
+
+    public void setListaEscrito(Set<LivroBasico> listaEscrito) {
+        this.listaEscrito = listaEscrito;
     }
     
     

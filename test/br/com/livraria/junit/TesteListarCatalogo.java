@@ -8,6 +8,7 @@ package br.com.livraria.junit;
 import br.com.livraria.jpa.EntityManagerUtil;
 import br.com.livraria.modelo.Catalogo;
 import br.com.livraria.modelo.Livraria;
+import br.com.livraria.modelo.Livro;
 import java.util.List;
 import javax.persistence.EntityManager;
 import org.junit.After;
@@ -38,16 +39,23 @@ public class TesteListarCatalogo {
     public void teste(){
    
   
-    System.out.println("LISTA DE CATALOGOS:");
+    System.out.println("\n\nLISTA DE CATALOGOS: \n\n");
+    System.out.println("________________________________________________________________________________");
+    System.out.println(" ");
     List<Catalogo>listacat = em.createQuery("from Catalogo order by id").getResultList();
         
         for(Catalogo c : listacat){
             System.out.println(" ID: " + c.getId() + 
-                                " Nome: " + c.getNome() + 
-                                " Descrição: " + c.getDescricao()+ 
-                                " Livraria: " + c.getLivraria().getNome());
+                               "\n NOME: " + c.getNome() + 
+                               "\n DESCRIÇÃO: " + c.getDescricao()+ 
+                               "\n LIVRARIA: " + c.getLivraria().getNome());
+       System.out.println("\n LISTA DE LIVROS DESSE CATÁLOGO: ");
+        for(Livro liv : c.getListaLivro()) {
+                System.out.println(" "+liv.getTitulo() + "\n");
+            }
+             System.out.println("________________________________________________________________________________");
+             System.out.println(" ");
+
         }
-        System.out.println("________________________________________________________________________________");
-    System.out.println(" ");
     }
 }

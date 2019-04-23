@@ -43,13 +43,29 @@ public class TesteListarLivro {
     @Test
     public void teste(){
    
-   System.out.println("LISTA DE LIVROS:");
+   System.out.println("LISTA DE LIVROS:\n\n");
     List<Livro> listaDeLivros = em.createQuery("from Livro order by id").getResultList();
         
         for(Livro l : listaDeLivros){
-            System.out.println("ISBN: " + l.getISBN()+" Codigo de Barras: "+l.getCodigoBarras()+"Número de Páginas: "+ l.getNumeroPaginas()+
-                    "\nStatus do Livro:"+ l.getAtivo() + "Data do Cadastro: " + l.getDataCadastro().toInstant()+"Valor: "+l.getValor()+
-                    "\nIdioma: "+ l.getIdioma().getNome()+ "Formato: "+ l.getFormato().getNome() +"Catalogo: "+ l.getCatalogo().getNome());
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		String dataString = sdf.format(l.getDataPublicacao().getTime());
+            SimpleDateFormat fo = new SimpleDateFormat("dd/MM/yyyy");
+		String dataDeCadastro = fo.format(l.getDataCadastro().getTime());
+                
+            System.out.println(" ISBN: " + l.getISBN()+
+                               "\n TÍTULO: " + l.getTitulo()+
+                               "\n RESUMO: " + l.getResumo()+
+                               "\n EDITORA: " + l.getEditora()+
+                               "\n DATA DE PUBLICAÇÃO: " + dataString+
+                               "\n CÓDIGO DE BARRAS: "+l.getCodigoBarras()+
+                               "\n NÚMERO DE PÁGINAS: "+ l.getNumeroPaginas()+
+                               "\n STATUS DO LIVRO: "+ l.getAtivo() +
+                               "\n DATA DE CADASTRO "+ dataDeCadastro+
+                               "\n VALOR: "+l.getValor()+
+                               "\n IDIOMA: "+ l.getIdioma().getNome()+ 
+                               "\n FORMATO: "+ l.getFormato().getNome() +
+                               "\n CATÁLOGO: "+ l.getCatalogo().getNome()+
+                               "\n --------------------------------------------------------- \n");
         }
      
     

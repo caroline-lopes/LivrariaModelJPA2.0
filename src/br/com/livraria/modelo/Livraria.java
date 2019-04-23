@@ -46,6 +46,8 @@ public class Livraria implements Serializable{
     @Length(max = 100, message = "O site não pode ter mais que {max} caracteres")
     @Column(name = "site", length = 100, nullable = false)
     private String site;
+    
+    
     @OneToMany(mappedBy = "livraria", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Catalogo> listaCatalogo = new ArrayList<>();
 

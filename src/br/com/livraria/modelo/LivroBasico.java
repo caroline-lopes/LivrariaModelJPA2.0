@@ -6,6 +6,7 @@
 package br.com.livraria.modelo;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashSet;
 import java.util.Objects;
@@ -55,6 +56,7 @@ public class LivroBasico implements Serializable{
     @Length(max = 50, message = "Campo editora não pode conter mais que {max} caracteres")
     @Column(name = "editora", nullable = false, length = 50)
     private String editora;
+    
     @Temporal(TemporalType.DATE)
     @Column(name = "dataPublicacao", nullable = false)
     @NotNull(message = "a dataPublicacao não pode ser nula!")
@@ -63,7 +65,7 @@ public class LivroBasico implements Serializable{
     @ManyToMany
     @JoinTable(name="lBasico_autor",
             joinColumns = 
-                @JoinColumn(name = "libroBasico", referencedColumnName = "isbn", nullable = false),
+                @JoinColumn(name = "livroBasico", referencedColumnName = "isbn", nullable = false),
              inverseJoinColumns =       
                 @JoinColumn(name="autor", referencedColumnName = "id", nullable = false)
             )
@@ -148,5 +150,13 @@ public class LivroBasico implements Serializable{
     public void removerAutores(Autor a){
         listaAutor.remove(a);
     }
-    
+
+    public Set<Autor> getListaAutor() {
+        return listaAutor;
+    }
+
+    public void setListaAutor(Set<Autor> listaAutor) {
+        this.listaAutor = listaAutor;
+    }
+
 }
